@@ -15,6 +15,6 @@
   },
 
   "bin": {
-    "toad_modules": "bin/toad_modules.js"
+    "toad_modules": "index.js"
   }
 }
