@@ -5,7 +5,7 @@ const { sprintf } = require("sprintf");
 
 let [ target ] = process.argv.slice(2);
 if (target[target.length - 1] === "/") {
-  target = substring(0, target.length - 1);
+  target = target.substring(0, target.length - 1);
 }
 
 const regex = 'node_modules$';
