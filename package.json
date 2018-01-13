@@ -12,7 +12,7 @@
   "dependencies": {
     "get-folder-size": "^1.0.1",
     "sprintf": "^0.1.5"
-  }
+  },
 
   "bin": {
     "toad_modules": "bin/toad_modules.js"
