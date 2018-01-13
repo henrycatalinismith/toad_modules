@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "recursive-readdir": "^2.2.1"
+  }
+}
