@@ -11,6 +11,12 @@ if (process.argv.includes("-v") || process.argv.includes("--version")) {
   process.exit(0);
 }
 
+process.on('exit', code => {
+  if (code !== 0) {
+    process.stderr.write(`toad_modules🐛${version}\n`);
+  }
+});
+
 let [ target ] = process.argv.slice(2);
 if (!target) {
   target = process.cwd();
