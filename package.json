@@ -2,7 +2,7 @@
   "name": "toad_modules",
   "license": "MIT",
   "description": "Reports disk usage of node_modules directories",
-  "version": "0.3.0",
+  "version": "1.0.0",
 
   "repository" : {
     "type": "git",
