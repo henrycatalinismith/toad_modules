@@ -25,7 +25,7 @@ exec(command, (error, stdout, stderr) => {
 
   roots.forEach((path, i) => {
     getSize(path, (error, size) => {
-      console.log(sprintf("%30s %dM", labels[i], size / 1024 / 1024));
+      console.log(sprintf(`%-${longest.length}s %dM`, labels[i], size / 1024 / 1024));
     });
   });
 });
