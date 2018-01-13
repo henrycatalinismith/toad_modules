@@ -11,11 +11,9 @@ if (target[target.length - 1] === "/") {
   target = target.substring(0, target.length - 1);
 }
 
-const regex = 'node_modules$';
-const command = `find ${target} -type d | grep "${regex}"`;
+const command = `find ${target} -type d -name "node_modules"`;
 
 let total = 0;
-let longest;
 
 exec(command, (error, stdout, stderr) => {
   const roots = stdout.split("\n").filter(path => {
@@ -24,10 +22,6 @@ exec(command, (error, stdout, stderr) => {
   });
 
   const labels = roots.map(path => path.substring(target.length + 1));
-
-  longest = labels.reduce((prev,cur) => {
-    return prev.length > cur.length ? prev : cur;
-  }, "");
 
   roots.forEach((path, i) => {
     getSize(path, (error, size) => {
