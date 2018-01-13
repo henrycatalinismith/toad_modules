@@ -4,7 +4,6 @@ const exec = require("child_process").exec;
 const { version } = require("./package.json");
 const { parallel } = require("async");
 const getSize = require("get-folder-size");
-const { sprintf } = require("sprintf");
 
 if (process.argv.includes("-v") || process.argv.includes("--version")) {
   process.stdout.write(`${version}\n`);
@@ -27,6 +26,8 @@ if (target[target.length - 1] === "/") {
 
 const command = `find ${target} -type d -name "node_modules"`;
 
+const line = (mb, label) => `${("" + Math.round(mb)).padStart(5)}M ${label}\n`;
+
 exec(command, (error, stdout, stderr) => {
   const roots = stdout.split("\n").filter(path => {
     const hasTwo = !!path.match(/node_modules.*node_modules/);
@@ -37,7 +38,7 @@ exec(command, (error, stdout, stderr) => {
   const callbacks = roots.map((path, i) => {
     return cb => {
       getSize(path, (error, size) => {
-        process.stdout.write(sprintf(`%5dM %s\n`, size / 1024 / 1024, labels[i]));
+        process.stdout.write(line(size / 1024 / 1024, labels[i]));
         cb(null, size);
       });
     };
@@ -45,7 +46,7 @@ exec(command, (error, stdout, stderr) => {
 
   parallel(callbacks, (error, results) => {
     const total = results.reduce((acc, curr) => acc + curr);
-    process.stdout.write(sprintf(`%5dM %s\n`, total / 1024 / 1024, "TOTAL"));
+    process.stdout.write(line(total / 1024 / 1024, "TOTAL");
   });
 });
 
