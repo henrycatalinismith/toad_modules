@@ -32,12 +32,12 @@ exec(command, (error, stdout, stderr) => {
   roots.forEach((path, i) => {
     getSize(path, (error, size) => {
       total += size;
-      console.log(sprintf(`%dM %-${longest.length}s`, size / 1024 / 1024, labels[i]));
+      console.log(sprintf(`%5dM %s`, size / 1024 / 1024, labels[i]));
     });
   });
 });
 
 process.on('exit', () => {
-  console.log(sprintf(`%dM %-${longest.length}s`, total / 1024 / 1024, "TOTAL"));
+  console.log(sprintf(`%5dM %s`, total / 1024 / 1024, "TOTAL"));
 });
 
