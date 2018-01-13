@@ -2,15 +2,14 @@
   "name": "toad_modules",
   "license": "MIT",
   "description": "Reports disk usage of node_modules directories",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/hnrysmth/toad_modules.git"
   },
   "dependencies": {
     "async": "^1.4.2",
-    "get-folder-size": "^1.0.1",
-    "sprintf": "^0.1.5"
+    "get-folder-size": "^1.0.1"
   },
   "bin": {
     "toad_modules": "index.js"
