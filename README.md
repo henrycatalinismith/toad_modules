@@ -17,8 +17,22 @@ Usage
 -----
 
 ```
-toad_modules ~/Documents/Projects
+toad_modules ~/Documents
 ```
+
+I'm Feeling Lucky
+-----------------
+
+This little one-liner will quietly delete every node_modules directory anywhere
+within your current working directory. It's a dangerous, destructive operation,
+so please consult your horoscope before copypasting this into your terminal.
+
+```
+toad_modules | grep -v TOTAL | awk '{ print $2; }' | xargs rm -r
+```
+
+It won't ask you if you're sure first. It will begin deleting almost immediately.
+But you seem like you know what you're doing, so go for it 👍
 
 Contributing
 ------------
