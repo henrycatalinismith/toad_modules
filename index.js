@@ -46,7 +46,7 @@ exec(command, (error, stdout, stderr) => {
 
   parallel(callbacks, (error, results) => {
     const total = results.reduce((acc, curr) => acc + curr);
-    process.stdout.write(line(total / 1024 / 1024, "TOTAL");
+    process.stdout.write(line(total / 1024 / 1024, "TOTAL"));
   });
 });
 
