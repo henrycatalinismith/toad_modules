@@ -2,7 +2,7 @@
 
 const exec = require("child_process").exec;
 const { version } = require("./package.json");
-const { parallel } = require("async");
+const { series } = require("async");
 const getSize = require("get-folder-size");
 
 if (process.argv.includes("-v") || process.argv.includes("--version")) {
@@ -44,7 +44,7 @@ exec(command, (error, stdout, stderr) => {
     };
   });
 
-  parallel(callbacks, (error, results) => {
+  series(callbacks, (error, results) => {
     const total = results.reduce((acc, curr) => acc + curr);
     process.stdout.write(line(total / 1024 / 1024, "TOTAL"));
   });
