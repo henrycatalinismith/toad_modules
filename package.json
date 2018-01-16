@@ -2,7 +2,7 @@
   "name": "toad_modules",
   "license": "MIT",
   "description": "Reports disk usage of node_modules directories",
-  "version": "2.7.0",
+  "version": "3.0.0",
   "bin": {
     "toad_modules": "index.js"
   },
