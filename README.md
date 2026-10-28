@@ -4,7 +4,7 @@
 Scans a directory recursively for node_modules directories and reports how much
 disk space each one is using.
 
-![screencast of usage](https://codeberg.org/henrycatalinismith/toad_modules/raw/branch/main/demo.gif)
+![screencast of usage](https://github.com/henrycatalinismith/toad_modules/raw/main/demo.gif)
 
 Installation
 ------------
